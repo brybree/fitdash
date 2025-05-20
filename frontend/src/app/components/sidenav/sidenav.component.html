@@ -1,9 +1,7 @@
 <p-sidebar [(visible)]="sidebarVisible">
-    <h3>Sidebar</h3>
-    <ul>
-        <li><a href="#Home"></a>Home</li>
-        <li><a href="#Programs"></a>Programs</li>
-        <li><a href="#Groceries"></a>Groceries</li>
+    <h3><a routerLink="">Home</a></h3>
+    <ul *ngFor="let link of routes">
+        <li><a [routerLink]="link.path">{{link.title}}</a></li>
     </ul>
 </p-sidebar>
 <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
