@@ -1,7 +1,9 @@
- <nav>
+<p-sidebar [(visible)]="sidebarVisible">
+    <h3>Sidebar</h3>
     <ul>
         <li><a href="#Home"></a>Home</li>
         <li><a href="#Programs"></a>Programs</li>
         <li><a href="#Groceries"></a>Groceries</li>
     </ul>
-</nav>
+</p-sidebar>
+<p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
