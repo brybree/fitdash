@@ -1,0 +1,10 @@
+nav > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    li {
+        padding: 10px;
+        border: black 1px solid ;
+    }
+}
