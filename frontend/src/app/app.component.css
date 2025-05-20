@@ -1,0 +1,63 @@
+:host {
+    --primary: oklch(0.55 0.31 264);
+    --light-primary: oklch(from var(--primary) calc(l + 0.15) c h);
+    --dark-primary: oklch(from var(--primary) calc(l - 0.15) c h);
+    
+    --secondary: oklch(0.55 0.16 143);
+    --light-secondary: oklch(from var(--secondary) calc(l + 0.15) c h);
+    --dark-secondary: oklch(from var(--secondary) calc(l - 0.15) c h);
+
+    --surface-0: oklch(0.99 0 0 / 85%);
+    --surface-1: oklch(1 0 0);
+    --surface-2: oklch(0.96 0.005 300);
+
+    --danger: oklch(0.59 0.23 7);
+
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+    nav > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+        li {
+            padding: 10px;
+            border: black 1px solid ;
+        }
+    }
+    h1 {
+        margin: 0 auto;
+    }
+
+}
+
+h1 {
+    color: var(--primary);
+}
+
+h2 {
+    color: var(--secondary);
+}
+
+li::active {
+    color: var(--light-primary);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    main {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .groceries {
+        background-color: var(--surface-0);
+        padding: 0px 10px;
+    }
+}
