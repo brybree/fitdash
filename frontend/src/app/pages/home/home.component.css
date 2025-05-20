@@ -1,0 +1,13 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    main {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .groceries {
+        background-color: var(--surface-0);
+        padding: 0px 10px;
+    }
+}

@@ -1,33 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitDash</title>
-</head>
-<body>
-  <header>
+<header>
     <app-sidenav></app-sidenav>
+    <a routerLink="/">Home</a>
+    <a routerLink="test">Test</a>
     <h1>TITLE</h1>
     <span>Week X/52</span>
-  </header>
-  
-  <div class="content">
-    <main>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas modi minus sint aperiam hic illum iusto vero, quibusdam corporis maiores? Eveniet vitae a eligendi. Autem in animi officia et. Sapiente!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur odio cupiditate unde fuga dolores cumque aut esse laudantium sed ex commodi vel iste nihil iusto nulla impedit, natus, accusantium blanditiis?
-      </p>
-    </main>
-
-    <section class="groceries">
-     <app-list-groceries></app-list-groceries>
-    </section>
-  </div>
-
-</body>
-</html>
+</header>
 
 <router-outlet></router-outlet>
+
+<footer>
+    <p>footer</p>
+</footer>

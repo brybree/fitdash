@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListGroceriesComponent } from './list-groceries/list-groceries.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ListGroceriesComponent, SidenavComponent],
+  imports: [RouterOutlet, SidenavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
