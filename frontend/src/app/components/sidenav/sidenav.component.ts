@@ -13,6 +13,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent {
-  routes = routes;
+  // Default visibility
   sidebarVisible = false;
+
+  // Routes without home page
+  routes = routes.filter(route => route.path !== ''); 
 }
