@@ -28,6 +28,7 @@
       "@app/*": ["app/*"],
       "@components/*": ["app/components/*"],
       "@pages/*": ["app/pages/*"],
+      "@global/*": ["app/global/*"]
     }
   },
   "angularCompilerOptions": {

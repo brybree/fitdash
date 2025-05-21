@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListGroceriesComponent } from '../../components/list-groceries/list-groceries.component';
+import { ListGroceriesComponent } from '@components/list-groceries/list-groceries.component';
 
 
 @Component({
