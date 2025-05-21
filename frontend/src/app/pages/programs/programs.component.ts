@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SvgIconComponent } from '@app/global/svg-icon/svg-icon.component';
 
 @Component({
   selector: 'app-programs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SvgIconComponent],
   templateUrl: './programs.component.html',
   styleUrl: './programs.component.css'
 })
