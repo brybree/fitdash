@@ -1,10 +1,25 @@
-nav > ul {
+ul {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    list-style: none;
-    li {
-        padding: 10px;
-        border: black 1px solid ;
-    }
+    list-style: circle;
+}
+
+a {
+    all: unset;
+    padding-left: 5px;
+}
+
+h3, li {
+    padding: 5px 0px;
+}
+
+h3:hover, li:hover{
+    cursor: pointer;
+    background: var(--surface-2);
+}
+
+.active-link {
+    color: var(--primary);
+    font-weight: bold;
 }

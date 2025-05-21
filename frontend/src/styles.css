@@ -22,5 +22,3 @@ body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 h1 { color: var(--primary); }
 h2 { color: var(--secondary); }
-
-li::active { color: var(--light-primary); }

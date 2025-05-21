@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { routes } from '@app/app.routes';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [SidebarModule, ButtonModule, RouterLink, CommonModule],
+  imports: [SidebarModule, ButtonModule, RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css'
 })
