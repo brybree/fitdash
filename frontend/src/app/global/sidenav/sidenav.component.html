@@ -1,7 +1,7 @@
 <p-sidebar [(visible)]="sidebarVisible">
     <h3 routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"><a>Home</a></h3>
-    <ul *ngFor="let route of routes">
-        <li routerLinkActive="active-link" [routerLink]="route.path">
+    <ul>
+        <li *ngFor="let route of routes" routerLinkActive="active-link" [routerLink]="route.path">
             <a>{{route.title}}</a>
         </li>
     </ul>
