@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-    --primary: oklch(0.55 0.31 264);
+    color-scheme: light dark;
+
+    --primary: light-dark(oklch(0.55 0.31 264), oklch(0.85 0.1366 211.01));
+    
     --light-primary: oklch(from var(--primary) calc(l + 0.15) c h);
     --dark-primary: oklch(from var(--primary) calc(l - 0.15) c h);
     
@@ -9,7 +12,7 @@
     --light-secondary: oklch(from var(--secondary) calc(l + 0.15) c h);
     --dark-secondary: oklch(from var(--secondary) calc(l - 0.15) c h);
 
-    --surface-0: oklch(0.99 0 0 / 85%);
+    --surface-0: light-dark(oklch(0.99 0 0 / 85%), oklch(0.19 0 0 / 0.8));
     --surface-1: oklch(1 0 0);
     --surface-2: oklch(0.96 0.005 300);
 
@@ -18,7 +21,13 @@
 }
 
 html, body { height: 100%; box-sizing: border-box; }
-body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color-scheme: dark;
+    background-color: var(--surface-0); 
+}
 
-h1 { color: var(--primary); }
+h1 {
+    color: var(--primary); 
+}
 h2 { color: var(--secondary); }
