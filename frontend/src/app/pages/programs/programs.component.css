@@ -1,7 +1,49 @@
 svg-icon {
-    fill: blue;
-    stroke: red;
-    stroke-miterlimit: 10px;
-    width: 500px;
-    height: 500px;
+    fill: white;
+    stroke: black;
+    width: 24px;
+    height: 24px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: circle;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}    
+
+button {
+  border: none;
+  background-color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding-top: 4px;
+}
+
+.edit {
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  
+}
+
+.edit:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.trash {
+    border: 2px solid var(--danger);
+    border-radius: 5px;   
+}
+
+.trash:hover {
+    background-color: var(--danger);
+    color: white;
 }

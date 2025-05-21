@@ -1,3 +1,9 @@
-<ul *ngFor="let program of fake_data">
-    <li>{{program}} <button><svg-icon icon="edit" class="icon"></svg-icon></button></li>
+<ul>
+    <li *ngFor="let program of fake_data">
+        <div class="line">
+            <span>{{program}}</span>
+            <button class="edit"><svg-icon icon="edit" class="icon"></svg-icon></button>
+            <button class="trash"><svg-icon icon="trash" class="icon"></svg-icon></button>
+        </div>
+    </li>
 </ul>
