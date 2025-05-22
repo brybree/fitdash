@@ -86,6 +86,7 @@ html, body { height: 100%; box-sizing: border-box; }
 body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 button, input, select, textarea {
+  background-color: inherit;
   color: inherit;
 }
 
