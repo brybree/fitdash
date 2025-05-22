@@ -1,19 +1,50 @@
-.test {
-    display: inline-flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    border: 2px solid black;
-    padding: 5px;
+
+
+.primary {
+    &.container {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 5px;
+        background-color: var(--clr-primary-background);
+        border: 2px solid var(--clr-primary-accent);
+    }
+
+    .validate {
+        background: var(--clr-primary-accent);
+        color: var(--clr-text-invert);
+        border-color: transparent;
+    }
+
+    .cancel {
+        background: var(--clr-primary-background);
+        color: var(--clr-primary-accent);
+        border-color: currentColor;
+    }
 }
 
-.validate {
-  background: var(--clr-primary-accent);
-  color: var(--clr-text-invert);
-  border-color: transparent;
-}
+.complementary {
+    &.container {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 5px;
+        background-color: var(--clr-complementary-background);
+        border: 2px solid var(--clr-complementary-accent);
+    }
 
-.cancel {
-  background: var(--clr-primary-background);
-  color: var(--clr-primary-accent);
-  border-color: currentColor;
+    h2 {
+        color: var(--clr-complementary-accent)
+    }
+    .validate {
+        background: var(--clr-complementary-accent);
+        color: var(--clr-text-invert);
+        border-color: transparent;
+    }
+
+    .cancel {
+        background: var(--clr-complementary-background);
+        color: var(--clr-complementary-accent);
+        border-color: currentColor;
+    }
 }

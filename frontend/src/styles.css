@@ -26,7 +26,7 @@
 
     /*Warning color palette*/
     /*Declination of orange*/
-    --warning-hue: 80;
+    --warning-hue: 60;
     --clr-warning-background: oklch(var(--lighting-background) 0.05 var(--warning-hue));
     --clr-warning-accent: oklch(var(--lighting-accent) 0.12 var(--warning-hue));
 
@@ -89,5 +89,4 @@ button, input, select, textarea {
   color: inherit;
 }
 
-h1 { color: var(--clr-primary-accent); }
-h2 { color: var(--clr-complementary-accent); }
+h1, h2 { color: var(--clr-primary-accent); }

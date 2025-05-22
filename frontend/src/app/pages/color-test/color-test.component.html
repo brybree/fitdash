@@ -1,11 +1,21 @@
-<div class="test">
-    <button class="cancel">
-        Cancel
-    </button>
-    
-    <button class="validate">
-        Validate
-    </button>
+<div class="container primary">
+    <h2>Hello primary colors !</h2>
+    <p>Welcome to the colorfull world</p>
+    <p>Hell yeah !!!</p>
+    <div class="button-container">
+        <button class="cancel"> Cancel </button>
+        <button style="margin-left: 5px;" class="validate"> Validate </button>
+    </div>
+</div>
+
+<div style="margin-left: 15px;" class="container complementary">
+    <h2 class="clr-complementary">Hello complementary colors !</h2>
+    <p>Welcome to the colorfull world</p>
+    <p>Hell yeah !!!</p>
+    <div class="button-container">
+        <button class="cancel"> Cancel </button>
+        <button style="margin-left: 5px;" class="validate"> Validate </button>
+    </div>
 </div>
 
 <p>neutral color palette</p>
@@ -17,8 +27,14 @@
 
 <p>main color palette</p>
 <div style="display: flex; flex-direction: row; gap: 0.5rem">
-    <div style="width: 50px; height: 50px; background-color: var(--clr-brand-background);"></div>
-    <div style="width: 50px; height: 50px; background-color: var(--clr-brand-accent);"></div>
+    <div style="width: 50px; height: 50px; background-color: var(--clr-primary-background);"></div>
+    <div style="width: 50px; height: 50px; background-color: var(--clr-primary-accent);"></div>
+</div>
+
+<p>complementary color palette</p>
+<div style="display: flex; flex-direction: row; gap: 0.5rem">
+    <div style="width: 50px; height: 50px; background-color: var(--clr-complementary-background);"></div>
+    <div style="width: 50px; height: 50px; background-color: var(--clr-complementary-accent);"></div>
 </div>
 
 <p>success color palette</p>
