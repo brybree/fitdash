@@ -26,4 +26,9 @@ export const routes: Routes = [
         title: 'Progress',
         loadComponent: () => import('@pages/progress/progress.component').then(c => c.ProgressComponent)
     },
+    {
+        path: 'color-test',
+        title: 'Testing Color',
+        loadComponent: () => import('@pages/color-test/color-test.component').then(c => c.ColorTestComponent)
+    }
 ];
