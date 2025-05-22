@@ -28,13 +28,13 @@ h3:hover, li:hover{
 
 
 svg-icon {
-    fill: red;
+    fill: white;
     stroke: black;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 }
 
-.droite, .gauche {
+.icon {
     fill: currentColor;
     stroke: currentColor;
 }

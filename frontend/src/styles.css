@@ -85,6 +85,7 @@ html.dark {
 html, body { height: 100%; box-sizing: border-box; }
 body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/*Replaced elements, override default style*/
 button, input, select, textarea {
   background-color: inherit;
   color: inherit;
@@ -97,4 +98,9 @@ h1, h2 { color: var(--clr-primary-accent); }
     background-color: var(--clr-background);
     color: var(--clr-text);
     border: none;
+}
+.p-ripple {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: currentColor !important;
 }
