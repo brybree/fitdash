@@ -1,10 +1,11 @@
 <!-- Icons -->
 <svg xmlns="http://www.w3.org/2000/svg">
-   <symbol id="fitdash" viewBox="0 0 24 24">
-        <polyline points="3 7 5 7 21 7"/>
-        <path class="poubelle" d="M18.5,7l-1,14H6.5L5.5,7M8,7l.5-3.5h7L16,7"/>
-        <line class="droite" x1="13.5" y1="16.5" x2="13.5" y2="11.5"/>
-        <line class="gauche" x1="10.5" y1="16.5" x2="10.5" y2="11.5"/>
+   <symbol id="fitdash" viewBox="0 0 512 512">
+        <path d="M352 280H160c-4.4 0-8-3.6-8-8v-32c0-4.4 3.6-8 8-8h192c4.4 0 8 3.6 8 8v32c0 4.4-3.6 8-8 8z" fill="currentColor"/>
+        <path d="M378 362V150c0-12.1 9.9-22 22-22s22 9.9 22 22v212c0 12.1-9.9 22-22 22s-22-9.9-22-22z" fill="currentColor"/>
+        <path d="M460 192h-12c-4.4 0-8 3.6-8 8v112c0 4.4 3.6 8 8 8h12c11 0 20-9 20-20v-88c0-11-9-20-20-20z" fill="currentColor"/>
+        <path d="M134 362V150c0-12.1-9.9-22-22-22s-22 9.9-22 22v212c0 12.1 9.9 22 22 22s22-9.9 22-22z" fill="currentColor"/>
+        <path d="M64 192H52c-11 0-20 9-20 20v88c0 11 9 20 20 20h12c4.4 0 8-3.6 8-8V200c0-4.4-3.6-8-8-8z" fill="currentColor"/>
     </symbol>
 
     <symbol id="trash" viewBox="0 0 24 24">
@@ -15,8 +16,8 @@
     </symbol>
 
     <symbol id="edit" viewBox="0 0 24 24">
-            <polygon points="4 18 5 13.5 16.5 2 17.5 2 20 4.5 20 5.5 8.5 17 4 18"/>
-            <line x1="14.5" y1="3.5" x2="18.5" y2="7.5"/>
-            <line x1="3.5" y1="21.5" x2="20.5" y2="21.5"/>
+        <polygon points="4 18 5 13.5 16.5 2 17.5 2 20 4.5 20 5.5 8.5 17 4 18"/>
+        <line x1="14.5" y1="3.5" x2="18.5" y2="7.5"/>
+        <line x1="3.5" y1="21.5" x2="20.5" y2="21.5"/>
     </symbol>
 </svg>
