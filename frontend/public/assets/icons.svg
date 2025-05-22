@@ -1,5 +1,12 @@
 <!-- Icons -->
 <svg xmlns="http://www.w3.org/2000/svg">
+   <symbol id="fitdash" viewBox="0 0 24 24">
+        <polyline points="3 7 5 7 21 7"/>
+        <path class="poubelle" d="M18.5,7l-1,14H6.5L5.5,7M8,7l.5-3.5h7L16,7"/>
+        <line class="droite" x1="13.5" y1="16.5" x2="13.5" y2="11.5"/>
+        <line class="gauche" x1="10.5" y1="16.5" x2="10.5" y2="11.5"/>
+    </symbol>
+
     <symbol id="trash" viewBox="0 0 24 24">
         <polyline points="3 7 5 7 21 7"/>
         <path d="M18.5,7l-1,14H6.5L5.5,7M8,7l.5-3.5h7L16,7"/>

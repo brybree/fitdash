@@ -1,9 +1,16 @@
-<p-sidebar [(visible)]="sidebarVisible">
-    <h3 routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"><a>Home</a></h3>
-    <ul>
-        <li *ngFor="let route of routes" routerLinkActive="active-link" [routerLink]="route.path">
-            <a>{{route.title}}</a>
-        </li>
-    </ul>
+<p-sidebar #sidebarRef [(visible)]="sidebarVisible">
+    <ng-template pTemplate="headless">
+        <h3 routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-home">
+                <svg-icon icon="fitdash" class="icon"></svg-icon>
+                <span>Home</span>
+            </a>
+        </h3>
+        <ul>
+            <li *ngFor="let route of routes" routerLinkActive="active-link" [routerLink]="route.path">
+                <a>{{route.title}}</a>
+            </li>
+        </ul>
+    </ng-template>
 </p-sidebar>
 <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>

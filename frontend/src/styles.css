@@ -90,3 +90,10 @@ button, input, select, textarea {
 }
 
 h1, h2 { color: var(--clr-primary-accent); }
+
+/*Sidenav related*/
+.p-drawer-left .p-drawer {
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+    border: none;
+}

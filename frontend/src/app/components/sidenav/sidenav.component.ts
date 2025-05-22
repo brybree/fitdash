@@ -4,11 +4,12 @@ import { ButtonModule } from 'primeng/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { routes } from '@app/app.routes';
 import { CommonModule } from '@angular/common';
+import { SvgIconComponent } from "../svg-icon/svg-icon.component";
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [SidebarModule, ButtonModule, RouterLink, RouterLinkActive, CommonModule],
+  imports: [SidebarModule, ButtonModule, RouterLink, RouterLinkActive, CommonModule, SvgIconComponent],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css'
 })

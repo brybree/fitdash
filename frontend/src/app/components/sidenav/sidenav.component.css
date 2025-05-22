@@ -16,10 +16,30 @@ h3, li {
 
 h3:hover, li:hover{
     cursor: pointer;
-    background: var(--surface-2);
+    background: var(--clr-primary-background);
+    color: var(--clr-primary-accent);
 }
 
 .active-link {
-    color: var(--primary);
     font-weight: bold;
+    background: var(--clr-primary-background);
+    color: var(--clr-primary-accent);
+}
+
+
+svg-icon {
+    fill: red;
+    stroke: black;
+    width: 24px;
+    height: 24px;
+}
+
+.droite, .gauche {
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.nav-home {
+    display: flex; 
+    align-items: center;
 }
