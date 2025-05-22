@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SvgIconComponent } from '@app/global/svg-icon/svg-icon.component';
+import { SvgIconComponent } from '@components/svg-icon/svg-icon.component';
 
 @Component({
   selector: 'app-programs',
