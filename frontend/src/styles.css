@@ -1,33 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
-
 :root {
-    color-scheme: light dark;
+    /*Neutral color palette*/
+    --clr-background: oklch(var(--lighting-neutral-background) 0.01 none);
+    --clr-text: oklch(var(--lighting-neutral-text) 0.01 none);
+    --clr-text-invert: oklch(var(--lighting-neutral-text-invert) 0.01 none);
 
-    --primary: light-dark(oklch(0.55 0.31 264), oklch(0.85 0.1366 211.01));
+    /*Primary color palette*/
+    /*Declination of dark blue*/
+    --primary-hue: 264;    
+    --clr-primary-background: oklch(var(--lighting-background) 0.05 var(--primary-hue));
+    --clr-primary-accent: oklch(var(--lighting-accent) 0.12 var(--primary-hue));
+
+    /*Complementary color palette*/
+    /*Declination of dark brown*/
+    --complementary-hue: calc(var(--primary-hue) + 180);
+    --clr-complementary-background: oklch(var(--lighting-background) 0.05 var(--complementary-hue));
+    --clr-complementary-accent: oklch(var(--lighting-accent) 0.05 var(--complementary-hue));
+
     
-    --light-primary: oklch(from var(--primary) calc(l + 0.15) c h);
-    --dark-primary: oklch(from var(--primary) calc(l - 0.15) c h);
+    /*Success color palette*/
+    /*Declination of green*/
+    --success-hue: 150;
+    --clr-success-background: oklch(var(--lighting-background) 0.05 var(--success-hue));
+    --clr-success-accent: oklch(var(--lighting-accent) 0.12 var(--success-hue));
+
+
+    /*Warning color palette*/
+    /*Declination of orange*/
+    --warning-hue: 80;
+    --clr-warning-background: oklch(var(--lighting-background) 0.05 var(--warning-hue));
+    --clr-warning-accent: oklch(var(--lighting-accent) 0.12 var(--warning-hue));
+
+    /*Error color palette*/
+    /*Declination of red*/
+    --error-hue: 20;
+    --clr-error-background: oklch(var(--lighting-background) 0.05 var(--error-hue));
+    --clr-error-accent: oklch(var(--lighting-accent) 0.12 var(--error-hue));
     
-    --secondary: oklch(0.55 0.16 143);
-    --light-secondary: oklch(from var(--secondary) calc(l + 0.15) c h);
-    --dark-secondary: oklch(from var(--secondary) calc(l - 0.15) c h);
-
-    --surface-0: light-dark(oklch(0.99 0 0 / 85%), oklch(0.19 0 0 / 0.8));
-    --surface-1: oklch(1 0 0);
-    --surface-2: oklch(0.96 0.005 300);
-
-    --danger: oklch(0.59 0.23 7);
-
+    background: var(--clr-background);
+    color: var(--clr-text);
 }
 
+/* Handle light/dark theme, system preference and user preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --lighting-neutral-background: 97%;
+    --lighting-neutral-text: 25%;
+    --lighting-neutral-text-invert: 89%;
+
+    --lighting-accent: 38%;
+    --lighting-background: 89%;
+  }
+}
+
+html.light {
+    --lighting-neutral-background: 97%;
+    --lighting-neutral-text: 25%;
+    --lighting-neutral-text-invert: 89%;
+
+    --lighting-accent: 38%;
+    --lighting-background: 89%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lighting-neutral-background: 12%;
+    --lighting-neutral-text: 89%;
+    --lighting-neutral-text-invert: 12%;
+
+    --lighting-accent: 80%;
+    --lighting-background: 25%;
+  }
+}
+
+html.dark {
+    --lighting-neutral-background: 12%;
+    --lighting-neutral-text: 89%;
+    --lighting-neutral-text-invert: 12%;
+
+    --lighting-accent: 80%;
+    --lighting-background: 25%;    
+}
+
+/*Default style*/
 html, body { height: 100%; box-sizing: border-box; }
-body { 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    color-scheme: dark;
-    background-color: var(--surface-0); 
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button, input, select, textarea {
+  color: inherit;
 }
 
-h1 {
-    color: var(--primary); 
-}
-h2 { color: var(--secondary); }
+h1 { color: var(--clr-primary-accent); }
+h2 { color: var(--clr-complementary-accent); }

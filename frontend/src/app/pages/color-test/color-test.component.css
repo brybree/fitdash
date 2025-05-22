@@ -1,0 +1,19 @@
+.test {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.validate {
+  background: var(--clr-primary-accent);
+  color: var(--clr-text-invert);
+  border-color: transparent;
+}
+
+.cancel {
+  background: var(--clr-primary-background);
+  color: var(--clr-primary-accent);
+  border-color: currentColor;
+}
