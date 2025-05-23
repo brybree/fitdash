@@ -1,67 +1,100 @@
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
+//code mostly from https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
+
+builder.Services.AddDbContext<TodoDb>(options =>
+ options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddOutputCache(options =>
+{
+    options.AddBasePolicy(policy => policy.Expire(TimeSpan.FromMinutes(10)));
+});
 
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
+
 var app = builder.Build();
 
-app.MapGet("/todoitems", async (TodoDb db) =>
-    await db.Todos.ToListAsync());
+app.UseOutputCache();
 
-app.MapGet("/todoitems/complete", async (TodoDb db) =>
-    await db.Todos.Where(t => t.IsComplete).ToListAsync());
-
-app.MapGet("/todoitems/{id}", async (int id, TodoDb db) =>
-    await db.Todos.FindAsync(id)
-        is Todo todo
-            ? Results.Ok(todo)
-            : Results.NotFound());
-
-app.MapPost("/todoitems", async (Todo todo, TodoDb db) =>
+if (app.Environment.IsDevelopment())
 {
-    db.Todos.Add(todo);
+    app.MapOpenApi().CacheOutput();
+    app.MapScalarApiReference();
+}
+
+RouteGroupBuilder todoItems = app.MapGroup("/todoitems");
+
+todoItems.MapGet("/", GetAllTodos);
+todoItems.MapGet("/complete", GetCompleteTodos);
+todoItems.MapGet("/{id}", GetTodo);
+todoItems.MapPost("/", CreateTodo);
+todoItems.MapPut("/{id}", UpdateTodo);
+todoItems.MapDelete("/{id}", DeleteTodo);
+
+app.Run();
+static async Task<IResult> GetAllTodos(TodoDb db)
+{
+    return TypedResults.Ok(await db.Todos.Select(x => new TodoItemDTO(x)).ToArrayAsync());
+}
+
+static async Task<IResult> GetCompleteTodos(TodoDb db) {
+    return TypedResults.Ok(await db.Todos.Where(t => t.IsComplete).Select(x => new TodoItemDTO(x)).ToListAsync());
+}
+
+static async Task<IResult> GetTodo(int id, TodoDb db)
+{
+    return await db.Todos.FindAsync(id)
+        is Todo todo
+            ? TypedResults.Ok(new TodoItemDTO(todo))
+            : TypedResults.NotFound();
+}
+
+static async Task<IResult> CreateTodo(TodoItemDTO todoItemDTO, TodoDb db)
+{
+    var todoItem = new Todo
+    {
+        IsComplete = todoItemDTO.IsComplete,
+        Name = todoItemDTO.Name
+    };
+
+    db.Todos.Add(todoItem);
     await db.SaveChangesAsync();
 
-    return Results.Created($"/todoitems/{todo.Id}", todo);
-});
+    todoItemDTO = new TodoItemDTO(todoItem);
 
-app.MapPut("/todoitems/{id}", async (int id, Todo inputTodo, TodoDb db) =>
+    return TypedResults.Created($"/todoitems/{todoItem.Id}", todoItemDTO);
+}
+
+static async Task<IResult> UpdateTodo(int id, TodoItemDTO todoItemDTO, TodoDb db)
 {
     var todo = await db.Todos.FindAsync(id);
 
-    if (todo is null) return Results.NotFound();
+    if (todo is null) return TypedResults.NotFound();
 
-    todo.Name = inputTodo.Name;
-    todo.IsComplete = inputTodo.IsComplete;
+    todo.Name = todoItemDTO.Name;
+    todo.IsComplete = todoItemDTO.IsComplete;
 
     await db.SaveChangesAsync();
 
-    return Results.NoContent();
-});
+    return TypedResults.NoContent();
+}
 
-app.MapDelete("/todoitems/{id}", async (int id, TodoDb db) =>
+static async Task<IResult> DeleteTodo(int id, TodoDb db)
 {
     if (await db.Todos.FindAsync(id) is Todo todo)
     {
         db.Todos.Remove(todo);
         await db.SaveChangesAsync();
-        return Results.NoContent();
+        return TypedResults.NoContent();
     }
 
-    return Results.NotFound();
-});
-
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference();
+    return TypedResults.NotFound();
 }
-
-app.Run();
