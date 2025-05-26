@@ -1,0 +1,8 @@
+<h2>Groceries</h2>
+@if (grocery$ | async; as groceries) {
+    <ul>
+        @for (grocery of groceries; track grocery.id) {
+            <li>{{grocery.name}}: {{grocery.price}}€ </li>
+        }
+    </ul>
+}

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ListGroceriesComponent } from '@components/list-groceries/list-groceries.component';
+import { GroceryListComponent } from '@app/components/grocery-list/grocery-list.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ListGroceriesComponent],
+  imports: [GroceryListComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
