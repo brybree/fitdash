@@ -25,7 +25,11 @@ public class GroceryService
 
     public async Task<GroceryItemDTO> CreateAsync(GroceryItemDTO dto)
     {
-        var grocery = new GroceryItem { Name = dto.Name };
+        var grocery = new GroceryItem
+        {
+            Name = dto.Name,
+            Price = dto.Price
+        };
         _db.Groceries.Add(grocery);
         await _db.SaveChangesAsync();
         return new GroceryItemDTO(grocery);
@@ -37,6 +41,7 @@ public class GroceryService
         if (grocery is null) return false;
 
         grocery.Name = dto.Name;
+        grocery.Price = dto.Price;
         await _db.SaveChangesAsync();
         return true;
     }
