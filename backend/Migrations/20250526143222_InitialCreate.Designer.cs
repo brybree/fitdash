@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace backend.Migrations
 {
     [DbContext(typeof(FitdashDbContext))]
-    [Migration("20250526135616_InitialCreate")]
+    [Migration("20250526143222_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -29,8 +29,8 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("INTEGER");
+                    b.Property<float>("Price")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Secret")
                         .HasColumnType("TEXT");

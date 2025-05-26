@@ -17,7 +17,7 @@ namespace backend.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Price = table.Column<int>(type: "INTEGER", nullable: false),
+                    Price = table.Column<float>(type: "REAL", nullable: false),
                     Secret = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

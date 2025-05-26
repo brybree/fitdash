@@ -26,8 +26,8 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("INTEGER");
+                    b.Property<float>("Price")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Secret")
                         .HasColumnType("TEXT");
