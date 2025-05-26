@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 
-class TodoDb : DbContext
+namespace Fitdash.Models;
+
+public class TodoDb : DbContext
 {
     public TodoDb(DbContextOptions<TodoDb> options)
         : base(options) { }
