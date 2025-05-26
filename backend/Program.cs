@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<TodoDb>(options =>
+builder.Services.AddDbContext<FitdashDbContext>(options =>
  options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -22,7 +22,7 @@ builder.Services.AddOutputCache(options =>
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddScoped<TodoService>();
+builder.Services.AddScoped<GroceryService>();
 
 var app = builder.Build();
 
@@ -34,8 +34,8 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-RouteGroupBuilder todoItems = app.MapGroup("/todoitems");
+RouteGroupBuilder groceries = app.MapGroup("/groceries");
 
-todoItems.MapTodoRoutes();
+groceries.MapGroceryRoutes();
 
 app.Run();

@@ -2,21 +2,24 @@
 using Fitdash.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace backend.Migrations
 {
-    [DbContext(typeof(TodoDb))]
-    partial class TodoDbModelSnapshot : ModelSnapshot
+    [DbContext(typeof(FitdashDbContext))]
+    [Migration("20250526135616_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.5");
 
-            modelBuilder.Entity("Fitdash.Models.Todo", b =>
+            modelBuilder.Entity("Fitdash.Models.GroceryItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -26,12 +29,15 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Secret")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Todos");
+                    b.ToTable("Groceries");
                 });
 #pragma warning restore 612, 618
         }

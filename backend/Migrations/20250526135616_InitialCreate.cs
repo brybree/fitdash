@@ -11,17 +11,18 @@ namespace backend.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Todos",
+                name: "Groceries",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Price = table.Column<int>(type: "INTEGER", nullable: false),
                     Secret = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Todos", x => x.Id);
+                    table.PrimaryKey("PK_Groceries", x => x.Id);
                 });
         }
 
@@ -29,7 +30,7 @@ namespace backend.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Todos");
+                name: "Groceries");
         }
     }
 }
