@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SvgIconComponent } from "../svg-icon/svg-icon.component";
 
 @Component({
-  selector: 'app-sidenav',
+  selector: 'sidenav',
   standalone: true,
   imports: [SidebarModule, ButtonModule, RouterLink, RouterLinkActive, CommonModule, SvgIconComponent],
   templateUrl: './sidenav.component.html',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-color-test',
+  selector: 'color-test',
   standalone: true,
   imports: [],
   templateUrl: './color-test.component.html',

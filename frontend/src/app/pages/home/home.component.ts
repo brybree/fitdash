@@ -3,7 +3,7 @@ import { GroceryListComponent } from '@app/components/grocery-list/grocery-list.
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   standalone: true,
   imports: [GroceryListComponent],
   templateUrl: './home.component.html',

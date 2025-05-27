@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { SvgIconComponent } from '@components/svg-icon/svg-icon.component';
 
 @Component({
-  selector: 'app-programs',
+  selector: 'programs',
   standalone: true,
   imports: [CommonModule, SvgIconComponent],
   templateUrl: './programs.component.html',

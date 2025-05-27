@@ -5,7 +5,7 @@ import { DatePipe } from '@angular/common';
 import { ThemeToggleComponent } from '@components/theme-toggle/theme-toggle.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'root',
   standalone: true,
   imports: [RouterOutlet, SidenavComponent, DatePipe, ThemeToggleComponent],
   templateUrl: './app.component.html',
