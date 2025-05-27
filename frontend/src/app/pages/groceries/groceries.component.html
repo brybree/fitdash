@@ -1,1 +1,39 @@
-<grocery-list></grocery-list>
+<main>
+
+    <div class="searchbar">
+        <input type="text" placeholder="search" [formControl]="searchControl">
+        here a filter
+    </div>
+
+    <div class="content">
+        <section class="search">
+            <ul>
+                @if (filterGroceries$ | async; as groceries) {
+                    @for (grocery of groceries; track grocery.id) {
+                        <div>
+                            <li>{{grocery.name}}: {{grocery.price}}€ </li>
+                            <button>add</button>
+                        </div>
+                    }
+                }
+            </ul>
+        </section>
+        <section class="shopping-cart">
+            <div>
+                <h2>Shopping Cart</h2>
+                <ul>
+                    @for (item of shoppingCart; track item.id) {
+                        <div>
+                            <li>{{item.name}}</li>
+                            <li>writeable quantity here with up/down arrow</li>
+                            <li>{{item.price}}</li>
+                            <button>icon remove here</button>
+                        </div>
+                    }
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</main>

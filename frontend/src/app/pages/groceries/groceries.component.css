@@ -1,0 +1,25 @@
+.searchbar {
+    display: flex;
+    gap: 1em;
+    margin: auto;
+    width: 50%;
+    input {
+        width: 100%;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 20em;
+    .shopping-cart {
+        flex-shrink: 0;
+    }
+}
+
+ul {
+    gap: 2em;
+    display: flex;
+    list-style-type: none;
+}
