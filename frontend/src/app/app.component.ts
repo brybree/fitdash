@@ -4,10 +4,12 @@ import { SidenavComponent } from '@components/sidenav/sidenav.component';
 import { DatePipe } from '@angular/common';
 import { ThemeToggleComponent } from '@components/theme-toggle/theme-toggle.component';
 
+import { IonicModule } from "@ionic/angular"
+
 @Component({
   selector: 'root',
   standalone: true,
-  imports: [RouterOutlet, SidenavComponent, DatePipe, ThemeToggleComponent],
+  imports: [IonicModule, RouterOutlet, SidenavComponent, DatePipe, ThemeToggleComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,7 @@
+{
+  "name": "fitdash",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
